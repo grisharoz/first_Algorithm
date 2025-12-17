@@ -9,17 +9,15 @@
 """
 
 def find_smallest_number(arr):
-    smallest_number = arr[0]  # Assume the first element is the smallest
-    smallest_index = 0  # Store the index of the assumed smallest element
+    smallest_number = arr[0] 
+    smallest_index = 0  
 
-    # Iterate through all elements starting from the second one
+  
     for i in range(1, len(arr)):
-        # If we find an element smaller than the current smallest
         if arr[i] < smallest_number:
-            smallest_number = arr[i]  # Update the smallest value
-            smallest_index = i  # Update the index of the smallest element
-
-    return smallest_index  # Return the index of the smallest element
+            smallest_number = arr[i]  
+            smallest_index = i 
+    return smallest_index 
 
 """
     Sorts an array in ascending order using the selection sort algorithm.
@@ -30,20 +28,14 @@ def find_smallest_number(arr):
 """
 
 def selection_sort(arr):
-    new_arr = []  # Create empty list for sorted elements
-    copiedArr = list(arr)  # Create a copy of the original array for modification
-
-    # Repeat for as many times as there are elements in the original array
+    new_arr = []  
+    copiedArr = list(arr)  
+    
     for i in range(len(copiedArr)):
-        # Find the index of the smallest element in the remaining array
         smallest = find_smallest_number(copiedArr)
-
-        # Remove the smallest element from the copied array and append it to the new array
         new_arr.append(copiedArr.pop(smallest))
 
-    return new_arr  # Return the fully sorted array
+    return new_arr 
 
-
-# Test the selection sort function
 print(selection_sort([3, 2, 1, 5, 6, 4, 7, 8, 9, 10]))
 # Expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
